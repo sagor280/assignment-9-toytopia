@@ -1,11 +1,11 @@
 import React from 'react';
 
-const WishList = () => {
+const AllToys = () => {
     return (
         <div>
-            <h2>WishList</h2>
+            <h1>all toys</h1>
         </div>
     );
 };
 
-export default WishList;
+export default AllToys;

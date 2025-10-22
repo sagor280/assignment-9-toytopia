@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router";
 import HomeLayOut from "../LayOut/HomeLayOut";
 import Home from "../Component/Home";
 import MyProfile from "../Component/MyProfile";
-import WishList from "../Component/WishList";
+import WishList from "../Component/AllToys";
 import ErrorPage from "../Page/ErrorPage";
+import AllToys from "../Component/AllToys";
 
 const router =createBrowserRouter(
     [
@@ -13,15 +14,16 @@ const router =createBrowserRouter(
             children:[
                 {
                     index:true,
-                    element:<Home></Home>
+                    element:<Home></Home>,
+                    loader:()=>fetch("/toysData.json"),
                 },
                 {
                     path:"/profile",
                     element:<MyProfile></MyProfile>
                 },
                 {
-                    path:"/wishlist",
-                    element:<WishList></WishList>
+                    path:"/toys",
+                    element:<AllToys></AllToys>
                 }
             ]
         },

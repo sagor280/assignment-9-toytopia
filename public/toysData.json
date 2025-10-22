@@ -1,0 +1,98 @@
+[
+  {
+    "toyId": 1,
+    "toyName": "Lego Classic Bricks",
+    "sellerName": "Toys R Us Local",
+    "sellerEmail": "contact@toysruslocal.com",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 75,
+    "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving. Kids can build anything they imagine, from houses to vehicles.",
+    "pictureURL": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 2,
+    "toyName": "Barbie Dreamhouse",
+    "sellerName": "Dream Toys Co.",
+    "sellerEmail": "hello@dreamtoysco.com",
+    "price": 199.99,
+    "rating": 4.9,
+    "availableQuantity": 30,
+    "description": "The ultimate Barbie experience with 3 stories, 8 rooms, and working elevator. Includes furniture and accessories for endless imaginative play.",
+    "pictureURL": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800",
+    "subCategory": "Dolls"
+  },
+  {
+    "toyId": 3,
+    "toyName": "Hot Wheels Track Set",
+    "sellerName": "Speed Zone Toys",
+    "sellerEmail": "info@speedzonetoys.com",
+    "price": 79.99,
+    "rating": 4.6,
+    "availableQuantity": 50,
+    "description": "Epic loop and launch track set with gravity-defying stunts. Includes 2 cars and over 20 feet of track pieces.",
+    "pictureURL": "https://media.istockphoto.com/id/620006890/photo/toy-car-truck.jpg?s=1024x1024&w=is&k=20&c=LiMJ1lJhtafl1gsfF9kgHu-0i_pKQ7cpu74EQH2eE_0=",
+    "subCategory": "Vehicles"
+  },
+  {
+    "toyId": 4,
+    "toyName": "Play-Doh Super Color Pack",
+    "sellerName": "Creative Kids Store",
+    "sellerEmail": "support@creativekidsstore.com",
+    "price": 24.99,
+    "rating": 4.5,
+    "availableQuantity": 120,
+    "description": "24 vibrant colors of Play-Doh modeling compound. Non-toxic and perfect for developing fine motor skills and creativity.",
+    "pictureURL": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800",
+    "subCategory": "Arts & Crafts"
+  },
+  {
+    "toyId": 5,
+    "toyName": "Nerf Elite Blaster",
+    "sellerName": "Action Toys Hub",
+    "sellerEmail": "contact@actiontoyshub.com",
+    "price": 34.99,
+    "rating": 4.8,
+    "availableQuantity": 85,
+    "description": "Long-range foam dart blaster with 12-dart clip. Fires darts up to 90 feet for epic indoor and outdoor battles.",
+    "pictureURL": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800",
+    "subCategory": "Action & Adventure"
+  },
+  {
+    "toyId": 6,
+    "toyName": "Melissa & Doug Wooden Puzzle",
+    "sellerName": "Learning Emporium",
+    "sellerEmail": "hello@learningemporium.com",
+    "price": 14.99,
+    "rating": 4.9,
+    "availableQuantity": 95,
+    "description": "High-quality wooden jigsaw puzzle with chunky pieces perfect for little hands. Educational and fun for toddlers.",
+    "pictureURL": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800",
+    "subCategory": "Educational"
+  },
+  {
+    "toyId": 7,
+    "toyName": "Fisher-Price Learning Tablet",
+    "sellerName": "Smart Kids Toys",
+    "sellerEmail": "info@smartkidstoys.com",
+    "price": 44.99,
+    "rating": 4.7,
+    "availableQuantity": 60,
+    "description": "Interactive tablet with songs, games, and activities teaching letters, numbers, and colors. Perfect for preschoolers.",
+    "pictureURL": "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800",
+    "subCategory": "Educational"
+  },
+  {
+    "toyId": 8,
+    "toyName": "Baby Yoda Plush Toy",
+    "sellerName": "Galaxy Collectibles",
+    "sellerEmail": "shop@galaxycollectibles.com",
+    "price": 29.99,
+    "rating": 4.9,
+    "availableQuantity": 45,
+    "description": "Adorable officially licensed Baby Yoda plush. Soft, cuddly, and perfect for fans of all ages.",
+    "pictureURL": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800",
+    "subCategory": "Plush Toys"
+  }
+]
