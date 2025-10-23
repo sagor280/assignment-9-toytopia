@@ -1,15 +1,15 @@
 .nav-link {
   font-weight: 500;
-  color: #4b5563; /* neutral gray */
+  color: #4b5563; 
   transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #9333ea; /* purple hover */
+  color: #9333ea; 
 }
 
 .nav-link.active {
-  color: #ec4899; /* pink active */
+  color: #ec4899; 
   border-bottom: 2px solid #ec4899;
   padding-bottom: 2px;
 }

@@ -8,7 +8,7 @@ import { IoEyeOff } from "react-icons/io5";
 const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [show, setShow] = useState(false); // ✅ password show/hide
+  const [show, setShow] = useState(false); 
   const emailRef = useRef(null);
 
   const { signIn, resetPassword } = useContext(AuthContext);
