@@ -9,6 +9,7 @@ import Login from "../Page/Login";
 import Register from "../Page/Register";
 import AuthLayout from "../LayOut/AuthLayout";
 import ToysDetails from "../Page/ToysDetails";
+import PrivateRoute from "../provider/PrivateRoute";
 
 const router =createBrowserRouter(
     [
@@ -47,7 +48,9 @@ const router =createBrowserRouter(
         },
         {
             path:'/toys-details/:id',
-            element:<ToysDetails></ToysDetails>,
+            element:<PrivateRoute>
+                <ToysDetails></ToysDetails>
+            </PrivateRoute>,
              loader:()=>fetch("/toysData.json"),
         },
         {

@@ -18,7 +18,7 @@ const ToysDetails = () => {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen py-12">
+      <div className="min-h-screen bg-[#f8f5ef]  py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Image Section */}
