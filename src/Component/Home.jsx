@@ -12,8 +12,8 @@ const Home = () => {
       const popularToys = toys.slice(0, 6);
     
   return (
-    <div className="bg-[#f8f5ef]">
-  <section className="mt-5 p-10">
+    <div className="bg-[#f8f5ef] min-h-screen  ">
+  <section className=" p-10">
       <Hero></Hero>
   </section>
      {/* Features Section */}

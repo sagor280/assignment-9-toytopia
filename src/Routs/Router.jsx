@@ -5,6 +5,9 @@ import MyProfile from "../Component/MyProfile";
 import WishList from "../Component/AllToys";
 import ErrorPage from "../Page/ErrorPage";
 import AllToys from "../Component/AllToys";
+import Login from "../Page/Login";
+import Register from "../Page/Register";
+import AuthLayout from "../LayOut/AuthLayout";
 
 const router =createBrowserRouter(
     [
@@ -29,7 +32,17 @@ const router =createBrowserRouter(
         },
         {
             path: '/auth',
-            element:<h2>Authentication Layout</h2>,
+            element:<AuthLayout></AuthLayout>,
+            children:[
+                {
+                    path:"/auth/login",
+                    element:<Login></Login>,
+                },
+                {
+                    path:"/auth/register",
+                    element:<Register></Register>,
+                },
+            ]
         },
         {
             path:'/toys',
