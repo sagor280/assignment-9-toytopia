@@ -1,9 +1,10 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
 
 
 const Login = () => {
+    const[error,setError]=useState();
     const {signIn}=use(AuthContext);
     const location =useLocation();
     const navigate = useNavigate();
@@ -21,8 +22,9 @@ const Login = () => {
             console.log(user);
             navigate(`${location.state? location.state:"/"}`)
         }).catch((error)=>{
-            const errorMessage = error.message;
-            alert(errorMessage);
+            const errorCode = error.code;
+            
+            setError(errorCode);
         })
 
 
@@ -64,6 +66,11 @@ const Login = () => {
             />
           </div>
 
+           {
+            error&& <p className='text-red-400 text-sm text-end '>{error}</p>
+          }
+
+
           <div className="text-right">
             <a
               href="#"
@@ -72,7 +79,7 @@ const Login = () => {
               Forgot password?
             </a>
           </div>
-
+         
           <button
             type="submit"
             className="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-2 rounded-lg font-semibold transition-all"
