@@ -8,6 +8,7 @@ import AllToys from "../Component/AllToys";
 import Login from "../Page/Login";
 import Register from "../Page/Register";
 import AuthLayout from "../LayOut/AuthLayout";
+import ToysDetails from "../Page/ToysDetails";
 
 const router =createBrowserRouter(
     [
@@ -45,8 +46,9 @@ const router =createBrowserRouter(
             ]
         },
         {
-            path:'/toys',
-            element:<h2>Toys Layout</h2>
+            path:'/toys-details/:id',
+            element:<ToysDetails></ToysDetails>,
+             loader:()=>fetch("/toysData.json"),
         },
         {
             path:"/*",

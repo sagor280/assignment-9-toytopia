@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router";
 
-const ToyCard = ({ toyName, pictureURL, price, rating, availableQuantity }) => {
+const ToyCard = ({toyId, toyName, pictureURL, price, rating, availableQuantity }) => {
   return (
      <div className="relative bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
       {/* Image Section */}
@@ -35,13 +36,14 @@ const ToyCard = ({ toyName, pictureURL, price, rating, availableQuantity }) => {
 
       {/* View More Button */}
       <div className="px-5 pb-5">
-        <button
+        <Link
+          to={`/toys-details/${toyId}`}
             className="px-5 py-2 text-sm font-medium text-white rounded-md bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition-all duration-300"
         >
         
         
           View More
-        </button>
+        </Link>
       </div>
     </div>
   );
