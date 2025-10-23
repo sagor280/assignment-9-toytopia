@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Register = () => {
+    const {createUser,setUser} = use(AuthContext);
+
+    const handleRegister = (e)=>{
+        e.preventDefault();
+        console.log(e.target);
+        const form =e.target;
+        const name = form.name.value;
+         const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log({name,photo,email,password});
+        createUser(email,password)
+        .then((res)=>{
+            const user =res.user;
+            // console.log(user);
+            setUser(user);
+        }).catch((error)=>{
+            const errorMessage = error.message;
+            alert(errorMessage);
+        })
+
+    }
+
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 py-12 px-4">
       <div className="bg-white shadow-xl rounded-2xl w-full max-w-md p-8">
@@ -12,14 +37,14 @@ const Register = () => {
          Create your account to start exploring
         </p>
 
-        <form className="space-y-5 mt-6">
+        <form onSubmit={handleRegister} className="space-y-5 mt-6">
             {/* name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-1">
               Full Name
             </label>
             <input
-              
+              name="name"
               type="name"
               placeholder="John Doe"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"
@@ -32,7 +57,7 @@ const Register = () => {
               Email
             </label>
             <input
-              id="email"
+              name="email"
               type="email"
               placeholder="your@email.com"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"
@@ -45,7 +70,7 @@ const Register = () => {
              Photo URL
             </label>
             <input
-              
+              name="photo"
               type="url"
               placeholder="https://example.com/photo.jpg"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"
@@ -58,7 +83,7 @@ const Register = () => {
               Password
             </label>
             <input
-              id="password"
+              name="password"
               type="password"
               placeholder="••••••••"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"
@@ -66,20 +91,12 @@ const Register = () => {
             />
           </div>
 
-          <div className="text-right">
-            <a
-              href="#"
-              className="text-sm text-indigo-600 hover:underline"
-            >
-              Forgot password?
-            </a>
-          </div>
-
+         
           <button
             type="submit"
             className="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-2 rounded-lg font-semibold transition-all"
           >
-            Login
+            Register
           </button>
         </form>
 
@@ -98,7 +115,7 @@ const Register = () => {
   </button>
 
         <p className="text-center text-sm text-gray-600 mt-4">
-          Don’t have an account?{" "}
+          Already have an account?{" "}
           <Link to="/auth/login" className="text-indigo-600 font-semibold hover:underline">
             Login here
           </Link>

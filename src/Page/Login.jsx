@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
 
 
 const Login = () => {
+    const {signIn}=use(AuthContext);
+  const handleLogin =(e)=>{
+  e.preventDefault();
+     const form =e.target;
+     const email = form.email.value;
+        const password = form.password.value;
+        console.log({email,password});
+
+        signIn(email,password)
+        .then((res)=>{
+            const user =res.user;
+            console.log(user);
+        }).catch((error)=>{
+            const errorMessage = error.message;
+            alert(errorMessage);
+        })
+
+
+    }
     return (
          <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 py-12 px-4">
       <div className="bg-white shadow-xl rounded-2xl w-full max-w-md p-8">
@@ -13,13 +33,13 @@ const Login = () => {
           Login to access your ToyTopia account
         </p>
 
-        <form className="space-y-5 mt-6">
+        <form onSubmit={handleLogin} className="space-y-5 mt-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-1">
               Email
             </label>
             <input
-              id="email"
+              name="email"
               type="email"
               placeholder="your@email.com"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"
@@ -32,7 +52,7 @@ const Login = () => {
               Password
             </label>
             <input
-              id="password"
+              name="password"
               type="password"
               placeholder="••••••••"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"

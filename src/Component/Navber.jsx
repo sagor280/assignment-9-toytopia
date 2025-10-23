@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { use } from 'react';
 
 import './Navber.css';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+  const{user,logOut}=use(AuthContext);
+  const handleLogOut=()=>{
+    console.log('user try to logout');
+    logOut()
+    .then(()=>{
+      alert('You Logged Out successfully');
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
   const links = (
     <>
       <li>
@@ -20,6 +32,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 px-6 shadow-md sticky top-0 z-50">
+      <div>{user && user.email}</div>
       {/* Left - Logo */}
       <div className="navbar-start">
         {/* Mobile menu */}
@@ -57,14 +70,17 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Right - Button */}
+    
       <div className="navbar-end">
-        <Link
+        {
+          user ?( <button onClick={handleLogOut} className='btn px-10 bg-gradient-to-r from-purple-600 to-pink-500 border-none text-white font-semibold hover:scale-105 transition-transform duration-200 shadow-md'>LogOut</button>) :(<Link
           to="/auth/login"
           className="btn px-10 bg-gradient-to-r from-purple-600 to-pink-500 border-none text-white font-semibold hover:scale-105 transition-transform duration-200 shadow-md"
         >
           Login
-        </Link>
+        </Link>)
+        }
+        
       </div>
     </div>
   );
