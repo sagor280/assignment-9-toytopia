@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Register = () => {
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, updateUser, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState(""); 
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-   
+    // Password validation
     const upperCase = /[A-Z]/.test(password);
     const lowerCase = /[a-z]/.test(password);
     const minLength = password.length >= 6;
@@ -32,16 +34,38 @@ const Register = () => {
       return;
     }
 
-   
     setError("");
 
-   
+    // Create User
     createUser(email, password)
       .then((res) => {
         const user = res.user;
-        setUser(user);
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+            toast.success("Registration successful!");
+            navigate("/"); 
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+            toast.error("Registration successful but profile update failed!");
+            navigate("/");
+          });
+
         form.reset();
-        alert("Registration successful!");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  //  Google Login Function
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(() => {
+        toast(" Logged in with Google!");
+        navigate("/"); 
       })
       .catch((error) => {
         setError(error.message);
@@ -109,13 +133,12 @@ const Register = () => {
             <input
               name="password"
               type="password"
-              placeholder="••••••••"
+              placeholder="password"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"
               required
             />
           </div>
 
-       
           {error && (
             <p className="text-red-500 text-sm font-medium text-center">
               {error}
@@ -130,20 +153,27 @@ const Register = () => {
           </button>
         </form>
 
+        {/* OR continue with */}
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t"></span>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-gray-500">Or continue with</span>
+            <span className="bg-white px-2 text-gray-500">
+              Or continue with
+            </span>
           </div>
         </div>
 
-        <button className="btn w-full rounded-lg bg-white hover:bg-[#e01476] text-black border-[#e5e5e5]">
+        {/* Google Button */}
+        <button
+          onClick={handleGoogleLogin}
+          className="btn w-full rounded-lg bg-white hover:bg-[#e01476] text-black border-[#e5e5e5] flex items-center justify-center gap-2"
+        >
           <svg
             aria-label="Google logo"
-            width="16"
-            height="16"
+            width="18"
+            height="18"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
