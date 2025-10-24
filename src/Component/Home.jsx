@@ -3,6 +3,8 @@ import { Link, useLoaderData } from "react-router";
 import Hero from "./Hero";
 import { Heart, Shield, Star, Truck } from "lucide-react";
 import ToyCard from "../Page/ToyCard";
+import CategoryBoxes from "../Page/CategoryBoxes";
+import ParentsCard from "../Page/ParentsCard";
 
 
 
@@ -69,15 +71,14 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="text-center mt-10">
-          <Link
-            to="/toys"
-            className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 px-8 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            View All Toys
-          </Link>
-        </div>
+        
       </section>
+
+      <CategoryBoxes></CategoryBoxes>
+      <ParentsCard></ParentsCard>
+      
+
+    
 
 
 

@@ -1,30 +1,50 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const MyProfile = () => {
   const { user, updateUser, setUser } = useContext(AuthContext);
-
-  const [name, setName] = useState(user.displayName || "");
-  const [photoURL, setPhotoURL] = useState(user.photoURL || "");
+  const [name, setName] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
   const [loading, setLoading] = useState(false);
+
+
+  useEffect(() => {
+    if (user) {
+      setName(user.displayName || "");
+      setPhotoURL(user.photoURL || "");
+    }
+  }, [user]);
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
+    if (!user) {
+      toast.error("No user found. Please log in first.");
+      return;
+    }
+
     setLoading(true);
 
     updateUser({ displayName: name, photoURL })
       .then(() => {
         setUser({ ...user, displayName: name, photoURL });
         toast.success("Profile updated successfully!");
-        setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         toast.error("Profile update failed!");
-        setLoading(false);
-      });
+      })
+      .finally(() => setLoading(false));
   };
+
+  
+  if (!user) {
+    return (
+      <div className="min-h-screen flex justify-center items-center text-xl text-red-500">
+        No user found. Please login first.
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen py-12 bg-[#f8f5ef] flex justify-center items-start">
@@ -36,7 +56,7 @@ const MyProfile = () => {
         {/* Avatar */}
         <div className="flex flex-col items-center mb-6">
           <img
-            src={user.photoURL || "https://via.placeholder.com/150"}
+            src={user.photoURL || " "}
             alt={user.displayName || "User"}
             className="w-28 h-28 rounded-full border-2 border-purple-400 mb-2"
           />
@@ -44,7 +64,6 @@ const MyProfile = () => {
           <p className="text-gray-500">{user.email}</p>
         </div>
 
-       
         <form onSubmit={handleUpdateProfile} className="space-y-4">
           <div>
             <label className="block mb-1 font-medium">Full Name</label>

@@ -1,44 +1,4 @@
-// import React from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
 
-// import { Autoplay } from "swiper/modules";
-// import { Navigation, Pagination } from "swiper/modules";
-
-// const Hero = () => {
-//   const slides = [
-//     'https://i.postimg.cc/QNvhBnVx/fluffy-toy-texture-close-up.jpg',
-//     "https://cdn-icons-png.flaticon.com/512/616/616408.png",
-//     "https://cdn-icons-png.flaticon.com/512/3082/3082032.png",
-//   ];
-
-//   return (
-//     <section className="w-full max-w-7xl mx-auto py-8">
-//       <Swiper
-//         modules={[Navigation, Pagination, Autoplay]}
-//         navigation
-//         pagination={{ clickable: true }}
-//         autoplay={{ delay: 3000 }}
-//         loop={true}
-//         className="rounded-lg overflow-hidden shadow-lg"
-//       >
-//         {slides.map((img, index) => (
-//           <SwiperSlide key={index}>
-//             <img
-//               src={img}
-//               alt={`Slide ${index + 1}`}
-//               className="w-full h-72 md:h-96 object-contain bg-white p-4"
-//             />
-//           </SwiperSlide>
-//         ))}
-//       </Swiper>
-//     </section>
-//   );
-// };
-
-// export default Hero;
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
