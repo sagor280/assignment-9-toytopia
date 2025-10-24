@@ -153,7 +153,7 @@ const Register = () => {
           </button>
         </form>
 
-        {/* OR continue with */}
+       
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t"></span>
@@ -165,7 +165,7 @@ const Register = () => {
           </div>
         </div>
 
-        {/* Google Button */}
+        
         <button
           onClick={handleGoogleLogin}
           className="btn w-full rounded-lg bg-white hover:bg-[#e01476] text-black border-[#e5e5e5] flex items-center justify-center gap-2"

@@ -97,13 +97,13 @@ const Login = () => {
             />
           </div>
 
-          {/* Password with eye icon */}
+         
           <div className="relative">
             <label className="block text-sm mb-1">Password</label>
             <input
               type={show ? "text" : "password"}
               name="password"
-              placeholder="••••••••"
+              placeholder="password"
               className="input input-bordered w-full bg-white/20 text-black placeholder-black/60 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-lg px-4 py-2"
               required
             />
@@ -117,7 +117,7 @@ const Login = () => {
 
           {error && <p className="text-red-500 text-sm text-end">{error}</p>}
 
-          {/* Forgot Password */}
+       
           <div className="text-right">
             <button
               type="button"
@@ -128,7 +128,7 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Submit Button */}
+        
           <button
             type="submit"
             disabled={loading}
@@ -138,7 +138,7 @@ const Login = () => {
           </button>
         </form>
 
-        {/* OR Continue with */}
+        
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t"></span>
@@ -150,7 +150,7 @@ const Login = () => {
           </div>
         </div>
 
-        {/* Google Login Button */}
+        
         <button
           onClick={handleGoogleLogin}
           className="btn w-full rounded-lg bg-white hover:bg-[#e01476] text-black border-[#e5e5e5] flex items-center justify-center gap-2"

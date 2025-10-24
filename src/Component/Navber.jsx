@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import "./Navber.css";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     logOut()
@@ -45,9 +46,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 px-6 shadow-md sticky top-0 z-50">
-      {/* Left - Logo */}
+    
       <div className="navbar-start">
-        {/* Mobile menu */}
+       
         <div className="dropdown">
           <div tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -84,15 +85,17 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      {/* Center - Links */}
+    
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-4">{links}</ul>
       </div>
 
-      {/* Right - User Info / Login */}
+   
       <div className="navbar-end flex items-center gap-3">
         {user && (
-          <div className="tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
+          <div className="tooltip tooltip-bottom" data-tip={user.displayName || "User"}
+            onClick={() => navigate("/profile")}
+          >
             <img
               src={user.photoURL}
               alt="User Avatar"

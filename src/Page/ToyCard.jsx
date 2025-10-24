@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router";
+import { Star } from "lucide-react";
 
-const ToyCard = ({toyId, toyName, pictureURL, price, rating, availableQuantity }) => {
+const ToyCard = ({ toyId, toyName, pictureURL, price, rating, availableQuantity }) => {
   return (
-     <div className="relative bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+    <div className="relative bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
       {/* Image Section */}
       <div className="relative">
         <img
@@ -25,23 +26,29 @@ const ToyCard = ({toyId, toyName, pictureURL, price, rating, availableQuantity }
         </h3>
 
         <p className="text-sm text-gray-600">
-          <span className="font-semibold text-gray-800">Available:</span>{" "}
-          {availableQuantity} units
+          <span className="font-semibold text-gray-800">Available:</span> {availableQuantity} units
         </p>
 
-        <div className="flex items-center gap-1 text-yellow-500 font-semibold">
-          ⭐ <span className="text-gray-700">{rating}</span>
+        {/* Rating */}
+        <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center text-yellow-500">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                className={`h-5 w-5 ${i < Math.floor(rating) ? "fill-current" : "fill-none"}`}
+              />
+            ))}
+          </div>
+          <span className="text-lg font-semibold">({rating})</span>
         </div>
       </div>
 
-      {/* View More Button */}
+      
       <div className="px-5 pb-5">
         <Link
           to={`/toys-details/${toyId}`}
-            className="px-5 py-2 text-sm font-medium text-white rounded-md bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition-all duration-300"
+          className="px-5 py-2 text-sm font-medium text-white rounded-md bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition-all duration-300"
         >
-        
-        
           View More
         </Link>
       </div>
