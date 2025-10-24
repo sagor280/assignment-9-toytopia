@@ -1,6 +1,126 @@
 [
   {
     "toyId": 1,
+    "toyName": "LEGO Technic Racing Car",
+    "sellerName": "Brick World",
+    "sellerEmail": "support@brickworld.com",
+    "price": 59.99,
+    "rating": 4.8,
+    "availableQuantity": 70,
+    "description": "Advanced LEGO Technic set to build a detailed racing car with moving pistons and realistic steering.",
+    "pictureURL": "https://www.lego.com/cdn/cs/set/assets/blte6366e8b88d64801/42141.png?format=webply&fit=bounds&quality=75&width=800&height=800&dpr=1",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 2,
+    "toyName": "Hot Wheels Mega Track",
+    "sellerName": "Speed Zone Toys",
+    "sellerEmail": "info@speedzonetoys.com",
+    "price": 89.99,
+    "rating": 4.7,
+    "availableQuantity": 50,
+    "description": "Huge Hot Wheels track set with loops, jumps, and multiple cars. Perfect for racing enthusiasts.",
+    "pictureURL": "https://m.media-amazon.com/images/I/81yt55USmbL._AC_SL1500_.jpg",
+    "subCategory": "Vehicles"
+  },
+  {
+    "toyId": 3,
+    "toyName": "Barbie Fashion Boutique",
+    "sellerName": "Dream Toys Co.",
+    "sellerEmail": "hello@dreamtoysco.com",
+    "price": 129.99,
+    "rating": 4.9,
+    "availableQuantity": 40,
+    "description": "Barbie boutique playset with fashion accessories, mini-dolls, and fun styling options.",
+    "pictureURL": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800",
+    "subCategory": "Dolls"
+  },
+  {
+    "toyId": 4,
+    "toyName": "NERF Rapid Fire Blaster",
+    "sellerName": "Action Toys Hub",
+    "sellerEmail": "contact@actiontoyshub.com",
+    "price": 49.99,
+    "rating": 4.6,
+    "availableQuantity": 90,
+    "description": "Rapid-fire NERF blaster with 25-dart clip. Safe and thrilling for competitive play.",
+    "pictureURL": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800",
+    "subCategory": "Action & Adventure"
+  },
+  {
+    "toyId": 5,
+    "toyName": "Fisher-Price Stacking Blocks",
+    "sellerName": "Smart Kids Toys",
+    "sellerEmail": "info@smartkidstoys.com",
+    "price": 19.99,
+    "rating": 4.5,
+    "availableQuantity": 100,
+    "description": "Colorful stacking blocks that develop hand-eye coordination and problem-solving skills.",
+    "pictureURL": "https://m.media-amazon.com/images/I/61K+Kw7-LTL._AC_SL1500_.jpg",
+    "subCategory": "Educational"
+  },
+  {
+    "toyId": 6,
+    "toyName": "Play-Doh Fun Factory",
+    "sellerName": "Creative Kids Store",
+    "sellerEmail": "support@creativekidsstore.com",
+    "price": 29.99,
+    "rating": 4.7,
+    "availableQuantity": 110,
+    "description": "Play-Doh set with extruder tools, molds, and vibrant colors for hours of creative play.",
+    "pictureURL": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800",
+    "subCategory": "Arts & Crafts"
+  },
+  {
+    "toyId": 7,
+    "toyName": "RC Off-Road Buggy",
+    "sellerName": "Speedy RC",
+    "sellerEmail": "support@speedyrc.com",
+    "price": 99.99,
+    "rating": 4.8,
+    "availableQuantity": 60,
+    "description": "Remote-controlled off-road buggy with rechargeable battery and shock-absorbing suspension.",
+    "pictureURL": "https://m.media-amazon.com/images/I/91qkb9eJ1ZL._AC_SL1500_.jpg",
+    "subCategory": "Vehicles"
+  },
+  {
+    "toyId": 8,
+    "toyName": "Melissa & Doug Wooden Train Set",
+    "sellerName": "Classic Toys",
+    "sellerEmail": "support@classictoys.com",
+    "price": 79.99,
+    "rating": 4.9,
+    "availableQuantity": 45,
+    "description": "Durable wooden train set with tracks, bridges, and trains for endless building fun.",
+    "pictureURL": "https://m.media-amazon.com/images/I/81qhu6FsFAL._AC_SL1500_.jpg",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 9,
+    "toyName": "Zoomer Interactive Puppy",
+    "sellerName": "Pet Toys Co.",
+    "sellerEmail": "info@pettoysco.com",
+    "price": 129.99,
+    "rating": 4.6,
+    "availableQuantity": 35,
+    "description": "Interactive robotic puppy that responds to touch, sound, and gestures. Perfect for kids who love pets.",
+    "pictureURL": "https://m.media-amazon.com/images/I/81iR9HldbjL._AC_SL1500_.jpg",
+    "subCategory": "Electronic Toys"
+  },
+  {
+    "toyId": 10,
+    "toyName": "Baby Yoda Plush Toy",
+    "sellerName": "Galaxy Collectibles",
+    "sellerEmail": "shop@galaxycollectibles.com",
+    "price": 29.99,
+    "rating": 4.9,
+    "availableQuantity": 50,
+    "description": "Soft and cuddly Baby Yoda plush for fans of all ages. Officially licensed collectible.",
+    "pictureURL": "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800",
+    "subCategory": "Plush Toys"
+  },
+  {
+    "toyId": 11,
     "toyName": "Lego Classic Bricks",
     "sellerName": "Toys R Us Local",
     "sellerEmail": "contact@toysruslocal.com",
@@ -12,7 +132,7 @@
     "subCategory": "Building Blocks"
   },
   {
-    "toyId": 2,
+    "toyId": 12,
     "toyName": "Barbie Dreamhouse",
     "sellerName": "Dream Toys Co.",
     "sellerEmail": "hello@dreamtoysco.com",
@@ -24,7 +144,7 @@
     "subCategory": "Dolls"
   },
   {
-    "toyId": 3,
+    "toyId": 13,
     "toyName": "Hot Wheels Track Set",
     "sellerName": "Speed Zone Toys",
     "sellerEmail": "info@speedzonetoys.com",
@@ -36,7 +156,7 @@
     "subCategory": "Vehicles"
   },
   {
-    "toyId": 4,
+    "toyId": 14,
     "toyName": "Play-Doh Super Color Pack",
     "sellerName": "Creative Kids Store",
     "sellerEmail": "support@creativekidsstore.com",
@@ -48,7 +168,7 @@
     "subCategory": "Arts & Crafts"
   },
   {
-    "toyId": 5,
+    "toyId": 15,
     "toyName": "Nerf Elite Blaster",
     "sellerName": "Action Toys Hub",
     "sellerEmail": "contact@actiontoyshub.com",
@@ -60,7 +180,7 @@
     "subCategory": "Action & Adventure"
   },
   {
-    "toyId": 6,
+    "toyId": 16,
     "toyName": "Melissa & Doug Wooden Puzzle",
     "sellerName": "Learning Emporium",
     "sellerEmail": "hello@learningemporium.com",
@@ -72,7 +192,7 @@
     "subCategory": "Educational"
   },
   {
-    "toyId": 7,
+    "toyId": 17,
     "toyName": "Fisher-Price Learning Tablet",
     "sellerName": "Smart Kids Toys",
     "sellerEmail": "info@smartkidstoys.com",
@@ -84,7 +204,7 @@
     "subCategory": "Educational"
   },
   {
-    "toyId": 8,
+    "toyId": 18,
     "toyName": "Baby Yoda Plush Toy",
     "sellerName": "Galaxy Collectibles",
     "sellerEmail": "shop@galaxycollectibles.com",

@@ -4,7 +4,8 @@ import { Star } from "lucide-react";
 
 const ToyCard = ({ toyId, toyName, pictureURL, price, rating, availableQuantity }) => {
   return (
-    <div className="relative bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col">
+    <div className="relative bg-white rounded-2xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300 flex flex-col
+            p-4 sm:p-6 md:p-5">
       {/* Image Section */}
       <div className="relative">
         <img

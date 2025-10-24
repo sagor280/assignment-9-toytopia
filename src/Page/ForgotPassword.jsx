@@ -1,25 +1,36 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useSearchParams } from "react-router";
+import React, { useState, useContext, useEffect } from "react";
+import { useLocation } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
   const { resetPassword } = useContext(AuthContext);
-  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
+ 
   useEffect(() => {
-    const emailParam = searchParams.get("email");
-    if (emailParam) setEmail(emailParam);
-  }, [searchParams]);
+    if (location.state?.email) setEmail(location.state.email);
+  }, [location.state]);
 
   const handleReset = async (e) => {
     e.preventDefault();
+    if (!email) {
+      toast.error("Please enter your email!");
+      return;
+    }
+
+    setLoading(true);
     try {
       await resetPassword(email);
-      alert("Password reset email sent! Redirecting to Gmail...");
+      toast.success("Password reset email sent! Redirecting to Gmail...");
       window.open("https://mail.google.com", "_blank");
+      setEmail(""); 
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,9 +49,10 @@ const ForgotPassword = () => {
           />
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-2 rounded-lg font-semibold"
           >
-            Send Reset Link
+            {loading ? "Sending..." : "Reset Password"}
           </button>
         </form>
       </div>

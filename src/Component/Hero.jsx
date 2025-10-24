@@ -74,7 +74,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-lg">
+    <div className="w-full h-[60vh] md:h-[70vh] rounded-3xl overflow-hidden shadow-lg">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={0}
@@ -98,9 +98,9 @@ const Hero = () => {
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 `bg-gradient-to-r` from-black/70 to-black/30 flex items-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 flex items-center">
                 <div className="container mx-auto px-4">
-                  <div className="max-w-2xl text-white space-y-4" data-aos="fade-up">
+                  <div className="max-w-full md:max-w-2xl text-white space-y-4 px-4 md:px-0">
                     <h1 className="text-4xl md:text-6xl font-bold">
                       {slide.title}
                     </h1>

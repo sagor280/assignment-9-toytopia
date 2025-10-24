@@ -13,7 +13,7 @@ const Home = () => {
     
   return (
     <div className="bg-[#f8f5ef] min-h-screen  ">
-  <section className=" p-10">
+  <section className="px-4 py-6 md:p-10">
       <Hero></Hero>
   </section>
      {/* Features Section */}

@@ -1,10 +1,15 @@
 import React from "react";
 import { Star } from "lucide-react";
+import { toast } from "react-toastify";
 
 const ToysDetailsCard = ({ toy }) => {
+  const handleTryNow = (e) => {
+  e.preventDefault();
+  toast.success("Your request has been submitted successfully!");
+};
   return (
     <div className="space-y-6">
-      {/* Toy Title, Rating, Price */}
+    
       <div>
         <h1 className="text-4xl font-bold mb-2">{toy.toyName}</h1>
         <div className="flex items-center gap-2 mb-4">
@@ -41,13 +46,13 @@ const ToysDetailsCard = ({ toy }) => {
         </div>
       </div>
 
-      {/* Try Now Form */}
+      
       <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-md p-6">
         <h3 className="font-bold text-xl mb-4">Try Before You Buy!</h3>
         <p className="text-gray-600 mb-4">
           Interested in trying this toy? Fill out the form below and we’ll arrange a demo.
         </p>
-        <form className="space-y-4">
+        <form onSubmit={handleTryNow} className="space-y-4">
           <div>
             <label htmlFor="name" className="block font-medium mb-1">Your Name</label>
             <input
@@ -66,7 +71,7 @@ const ToysDetailsCard = ({ toy }) => {
             />
           </div>
           <button
-            type="button"
+            type="submit"
             className="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-500 text-white rounded-md font-semibold hover:opacity-90"
           >
             Try Now

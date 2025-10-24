@@ -26,7 +26,7 @@ const ToysDetails = () => {
               <img
                 src={toy?.pictureURL}
                 alt={toy?.toyName}
-                className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover rounded-3xl shadow-2xl"
               />
             </div>
 

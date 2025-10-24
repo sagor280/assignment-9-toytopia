@@ -87,7 +87,7 @@ const Navbar = () => {
 
     
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-4">{links}</ul>
+        <ul className="menu menu-horizontal px-1 space-x-2 md:space-x-4">{links}</ul>
       </div>
 
    
@@ -107,14 +107,14 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleLogOut}
-            className="btn px-10 bg-gradient-to-r from-purple-600 to-pink-500 border-none text-white font-semibold hover:scale-105 transition-transform duration-200 shadow-md"
+            className="btn px-5 bg-gradient-to-r from-purple-600 to-pink-500 border-none text-white font-semibold hover:scale-105 transition-transform duration-200 shadow-md"
           >
             Logout
           </button>
         ) : (
           <Link
             to="/auth/login"
-            className="btn px-10 bg-gradient-to-r from-purple-600 to-pink-500 border-none text-white font-semibold hover:scale-105 transition-transform duration-200 shadow-md"
+            className="btn px-5 bg-gradient-to-r from-purple-600 to-pink-500 border-none text-white font-semibold hover:scale-105 transition-transform duration-200 shadow-md"
           >
             Login
           </Link>

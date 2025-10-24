@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="border-t bg-card bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mt-20">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
           <div className="space-y-4">
             <h3 className="text-3xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               ToyTopia
